@@ -2,7 +2,9 @@ import { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { Form, Input, Button } from "antd";
 import { Layout } from "antd";
-
+import Dashboard from "./pages/lab1";
+import StudentList from "./pages/lab2";
+import Lab2 from "./pages/lab2";
 const { Header, Content, Footer } = Layout;
 
 function App() {
@@ -43,6 +45,8 @@ function App() {
       {/* MAIN CONTENT */}
       <div className="max-w-6xl mx-auto mt-10 px-4 text-center">
         <h1 className="text-4xl font-bold mb-4">Chào mừng đến với WEB2091</h1>
+        
+        
         <Button type="primary">Click me</Button>
         <Button type="default">Click me</Button>
         <Button type="dashed">Click me</Button>
@@ -61,6 +65,8 @@ function App() {
                 </Button>
               </Form.Item>
             </Form>
+            <Dashboard/>
+            <Lab2/>
           </Content>
           <Footer>Footer</Footer>
         </Layout>
