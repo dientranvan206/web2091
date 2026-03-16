@@ -2,9 +2,10 @@ import { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { Form, Input, Button } from "antd";
 import { Layout } from "antd";
-import Dashboard from "./pages/lab1";
+import Dashboard from "./pages/Lab1";
 import StudentList from "./pages/lab2";
 import Lab2 from "./pages/lab2";
+import LoginForm from "./pages/Lab3";
 const { Header, Content, Footer } = Layout;
 
 function App() {
@@ -56,16 +57,23 @@ function App() {
           <Header style={{ color: "white" }}>Header</Header>
           <Content style={{ padding: 20 }}>
             <Form onFinish={onFinish}>
-              <Form.Item label="Username" name="username">
+              <Form.Item label="Email" name="email"  rules={[
+    { required: true, message: "Vui lòng nhập email" },
+    { type: "email", message: "Email không hợp lệ" },
+  ]}>
                 <Input />
               </Form.Item>
+              <Form.Item label="Password" name="password">
+                <Input.Password />
+              </Form.Item>
+              
               <Form.Item>
                 <Button htmlType="submit" type="primary">
                   Submit
                 </Button>
               </Form.Item>
             </Form>
-            <Dashboard/>
+            <LoginForm/>
             <Lab2/>
           </Content>
           <Footer>Footer</Footer>
