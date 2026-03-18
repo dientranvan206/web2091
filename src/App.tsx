@@ -6,6 +6,8 @@ import Dashboard from "./pages/Lab1";
 import StudentList from "./pages/lab2";
 import Lab2 from "./pages/lab2";
 import LoginForm from "./pages/Lab3";
+import Lab4 from "./pages/Lab4";
+
 const { Header, Content, Footer } = Layout;
 
 function App() {
@@ -73,8 +75,9 @@ function App() {
                 </Button>
               </Form.Item>
             </Form>
-            <LoginForm/>
-            <Lab2/>
+            {/* <LoginForm/> */}
+            {/* <Lab2/> */}
+            <Lab4/>
           </Content>
           <Footer>Footer</Footer>
         </Layout>
