@@ -2,6 +2,7 @@ import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
 import { Image, Popconfirm, Table,Button} from "antd";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { Link } from 'react-router-dom';
 export default function StoryList() {
     const { data, isLoading, isError } = useQuery({
         queryKey: ["getAllStories"],
@@ -43,6 +44,7 @@ export default function StoryList() {
         {
             title: "Action",
             render: (_: any, record: any) => (
+                <>
                 <Popconfirm
                     title="Delete the story"
                     description="Are you sure to delete this story?"
@@ -52,6 +54,10 @@ export default function StoryList() {
                 >
                     <Button danger>xóa</Button>
                 </Popconfirm>
+                <Link to={`/edit/${record.id}`} >Sửa</Link>
+                </>
+                
+                
             ),
         },
         

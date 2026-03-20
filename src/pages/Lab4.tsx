@@ -44,7 +44,7 @@ const Lab4 = () => {
       toast.success("Them truyen thanh cong");
       storyForm.resetFields();
 
-      // Reload danh sach o Lab 5
+      
       qc.invalidateQueries({ queryKey: ["getAllStories"] });
     },
     onError: () => {

@@ -1,5 +1,5 @@
 import { Toaster } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import { Form, Input, Button } from "antd";
 import { Layout } from "antd";
 import Dashboard from "./pages/Lab1";
@@ -8,6 +8,7 @@ import Lab2 from "./pages/lab2";
 import LoginForm from "./pages/Lab3";
 import Lab4 from "./pages/Lab4";
 import StoryList from "./pages/Lab5";
+import { EditStory } from "./pages/Lab6";
 const { Header, Content, Footer } = Layout;
 
 function App() {
@@ -49,7 +50,9 @@ function App() {
       <div className="max-w-6xl mx-auto mt-10 px-4 text-center">
         <h1 className="text-4xl font-bold mb-4">Chào mừng đến với WEB2091</h1>
         
-        
+        <Routes>
+          <Route path="/edit/:id" element={<EditStory/>}></Route>
+        </Routes>
         <Button type="primary">Click me</Button>
         <Button type="default">Click me</Button>
         <Button type="dashed">Click me</Button>
@@ -79,6 +82,7 @@ function App() {
             {/* <Lab2/> */}
             {/* <Lab4/> */}
             <StoryList/>
+            
           </Content>
           <Footer>Footer</Footer>
         </Layout>
