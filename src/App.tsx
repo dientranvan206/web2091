@@ -7,7 +7,7 @@ import StudentList from "./pages/lab2";
 import Lab2 from "./pages/lab2";
 import LoginForm from "./pages/Lab3";
 import Lab4 from "./pages/Lab4";
-
+import StoryList from "./pages/Lab5";
 const { Header, Content, Footer } = Layout;
 
 function App() {
@@ -77,7 +77,8 @@ function App() {
             </Form>
             {/* <LoginForm/> */}
             {/* <Lab2/> */}
-            <Lab4/>
+            {/* <Lab4/> */}
+            <StoryList/>
           </Content>
           <Footer>Footer</Footer>
         </Layout>

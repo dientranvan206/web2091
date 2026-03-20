@@ -1,5 +1,5 @@
 import { Button, Checkbox, Form, Input } from "antd";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import toast from "react-hot-toast";
 
@@ -19,6 +19,7 @@ interface Story {
 const Lab4 = () => {
   const [categoryForm] = Form.useForm<CategoryFormData>();
   const [storyForm] = Form.useForm<Story>();
+  const qc = useQueryClient();
 
   const categoryMutation = useMutation({
     mutationFn: async (data: CategoryFormData) => {
@@ -42,6 +43,9 @@ const Lab4 = () => {
     onSuccess: () => {
       toast.success("Them truyen thanh cong");
       storyForm.resetFields();
+
+      // Reload danh sach o Lab 5
+      qc.invalidateQueries({ queryKey: ["getAllStories"] });
     },
     onError: () => {
       toast.error("Co loi xay ra");
@@ -120,7 +124,7 @@ const Lab4 = () => {
             </Form.Item>
 
             <Button type="primary" htmlType="submit" loading={storyMutation.isPending} block>
-              {storyMutation.isPending ? "Đang thêm" : "Them truyen"}
+              {storyMutation.isPending ? "Dang them" : "Them truyen"}
             </Button>
           </Form>
         </div>
